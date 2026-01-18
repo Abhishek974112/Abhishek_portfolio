@@ -20,7 +20,7 @@ const DATA = {
   skills: {
     "Programming + CS Core": ["Python", "Data Structures", "SQL", "Git"],
     "AI / ML": ["Machine Learning", "Deep Learning", "NLP", "GenAI", "Computer Vision"],
-    "Libraries": ["NumPy", "Pandas", "Scikit-learn", "TensorFlow"],
+    Libraries: ["NumPy", "Pandas", "Scikit-learn", "TensorFlow"],
     "Soft Skills": ["Communication", "Leadership", "Team Collaboration", "Presentation Skills"],
   },
   experience: [
@@ -66,7 +66,7 @@ const DATA = {
       name: "AI Cricket Player Performance Prediction",
       tag: "ML • Predictive Analytics",
       desc:
-        "Forecasted player outcomes using historical match data. Performed preprocessing and feature engineering to extract key metrics like runs, strike rate, wickets, and consistency. Trained and evaluated ML models for team selection and strategy planning.",
+        "Forecasted player outcomes using historical match data. Performed data preprocessing and feature engineering to extract key metrics like runs, strike rate, wickets, and consistency. Trained and evaluated ML models using Python, Pandas, NumPy, and Scikit-learn to support team selection and strategy planning.",
       tech: ["Pandas", "NumPy", "Scikit-learn"],
       link: null,
     },
@@ -74,7 +74,7 @@ const DATA = {
       name: "AI Internship Guardian",
       tag: "AI Safety • Verification",
       desc:
-        "Smart platform to detect genuine vs fake internships using AI-driven analysis. Implemented verification checks, risk scoring, and structured insights based on company and offer details, focusing on secure login and usability.",
+        "Developed AI Internship Guardian, a smart platform to detect genuine vs fake internships using AI-driven analysis. Implemented verification checks, risk scoring, and structured insights based on company and offer details. Built using Python with a web-based interface, focusing on secure login, usability, and scalability.",
       tech: ["Python", "Risk Scoring", "Web App"],
       link: null,
     },
@@ -82,9 +82,9 @@ const DATA = {
   achievements: [
     "Best Paper award: “Sustainable E-Waste Management in 5G Smart Communities using Blockchain” (National Conference).",
     "College Ambassador for Techfest, IIT Bombay.",
-    "Completed NCC training and awarded the “A” Certificate.",
-    "Volunteered in organizing technical and cultural events (coordination + logistics).",
-    "Advanced to 4th round of the “Sa Re Ga Ma” music competition.",
+    "Successfully completed NCC training and awarded the “A” Certificate.",
+    "Volunteered in organizing technical and cultural events at college (coordination + logistics).",
+    "Recognized and advanced to the 4th round of the “Sa Re Ga Ma” music competition.",
   ],
   certifications: [
     "Data Analysis & Forensic Technology — Deloitte",
@@ -162,7 +162,43 @@ export default function Portfolio() {
               I build practical AI/ML projects.
             </h1>
 
-            <p className="subtitle">{DATA.summary}</p>
+            {/* ✅ PROFILE PHOTO BLOCK ADDED HERE */}
+            <div className="mt-6 flex items-center justify-between gap-4 flex-wrap">
+              <div className="flex items-center gap-4">
+                <img
+                  src="/profile.jpeg"
+                  alt="Abhishek Karyagol"
+                  className="h-24 w-24 rounded-3xl object-cover border border-white/10 shadow-lg"
+                />
+                <div>
+                  <p className="text-white font-semibold text-lg">{DATA.name}</p>
+                  <p className="text-white/60 text-sm">{DATA.role}</p>
+                </div>
+              </div>
+
+              <div className="flex gap-2">
+                <a
+                  href={DATA.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn ghost"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={DATA.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn ghost"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            <p className="subtitle" style={{ marginTop: 16 }}>
+              {DATA.summary}
+            </p>
 
             <div className="ctaRow">
               <a className="btn primary" href="#projects">
@@ -351,11 +387,7 @@ export default function Portfolio() {
       </Section>
 
       {/* CONTACT */}
-      <Section
-        id="contact"
-        title="Contact"
-        subtitle="Want to collaborate or hire? Let’s connect."
-      >
+      <Section id="contact" title="Contact" subtitle="Want to collaborate or hire? Let’s connect.">
         <Card>
           <div className="contactRow">
             <div>
@@ -386,9 +418,7 @@ export default function Portfolio() {
           </div>
         </Card>
 
-        <p className="footer">
-          © {new Date().getFullYear()} {DATA.name} • Built with React
-        </p>
+        <p className="footer">© {new Date().getFullYear()} {DATA.name} • Built with React</p>
       </Section>
     </div>
   );
