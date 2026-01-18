@@ -15,14 +15,17 @@ const DATA = {
   email: "akaryagol@gmail.com",
   github: "https://github.com/Abhishek974112",
   linkedin: "https://www.linkedin.com/in/abhik05",
+
   summary:
     "Analytical and innovative AIML fresher with strong foundation in Python, Machine Learning, Data Structures, and SQL. Skilled in NumPy, Pandas, Scikit-learn, and TensorFlow. Seeking an entry-level role to apply expertise in data preprocessing, feature engineering, model training, evaluation, and basic deployment using Flask/FastAPI. Passionate about building real-world AI solutions in automation, predictive analytics, and Computer Vision/NLP.",
+
   skills: {
     "Programming + CS Core": ["Python", "Data Structures", "SQL", "Git"],
     "AI / ML": ["Machine Learning", "Deep Learning", "NLP", "GenAI", "Computer Vision"],
     Libraries: ["NumPy", "Pandas", "Scikit-learn", "TensorFlow"],
     "Soft Skills": ["Communication", "Leadership", "Team Collaboration", "Presentation Skills"],
   },
+
   experience: [
     {
       title: "Intern",
@@ -45,6 +48,7 @@ const DATA = {
       ],
     },
   ],
+
   projects: [
     {
       name: "SmiloScope",
@@ -79,6 +83,7 @@ const DATA = {
       link: null,
     },
   ],
+
   achievements: [
     "Best Paper award: “Sustainable E-Waste Management in 5G Smart Communities using Blockchain” (National Conference).",
     "College Ambassador for Techfest, IIT Bombay.",
@@ -86,11 +91,13 @@ const DATA = {
     "Volunteered in organizing technical and cultural events at college (coordination + logistics).",
     "Recognized and advanced to the 4th round of the “Sa Re Ga Ma” music competition.",
   ],
+
   certifications: [
     "Data Analysis & Forensic Technology — Deloitte",
     "Samsung Anveshana Ideathon — Samsung",
     "National Level Technical Symposium — Silver Spectrum Techfest, New Horizon College of Engineering",
   ],
+
   education: {
     degree: "B.E. in Artificial Intelligence and Machine Learning",
     college: "Cambridge Institute Of Technology",
@@ -162,37 +169,27 @@ export default function Portfolio() {
               I build practical AI/ML projects.
             </h1>
 
-            {/* ✅ PROFILE PHOTO BLOCK ADDED HERE */}
-            <div className="mt-6 flex items-center justify-between gap-4 flex-wrap">
-              <div className="flex items-center gap-4">
-                <img
-                  src="/profile.jpeg"
-                  alt="Abhishek Karyagol"
-                  className="h-24 w-24 rounded-3xl object-cover border border-white/10 shadow-lg"
-                />
-                <div>
-                  <p className="text-white font-semibold text-lg">{DATA.name}</p>
-                  <p className="text-white/60 text-sm">{DATA.role}</p>
-                </div>
-              </div>
-
-              <div className="flex gap-2">
-                <a
-                  href={DATA.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn ghost"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href={DATA.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn ghost"
-                >
-                  GitHub
-                </a>
+            {/* ✅ PROFILE PHOTO + SMALL INFO (CLEAN, NO DUPLICATION) */}
+            <div style={{ marginTop: 18, display: "flex", alignItems: "center", gap: 14 }}>
+              <img
+                src="/profile.jpeg"
+                alt="Abhishek Karyagol"
+                style={{
+                  width: 88,
+                  height: 88,
+                  borderRadius: 18,
+                  objectFit: "cover",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  boxShadow: "0 18px 45px rgba(0,0,0,0.35)",
+                }}
+              />
+              <div>
+                <p style={{ margin: 0, fontWeight: 700, color: "white" }}>
+                  Open to Internship / Entry-Level AIML Roles
+                </p>
+                <p style={{ margin: "6px 0 0 0", color: "rgba(255,255,255,0.65)" }}>
+                  Python • ML • CV • NLP • SQL
+                </p>
               </div>
             </div>
 
@@ -357,69 +354,4 @@ export default function Portfolio() {
         <div className="grid2">
           <Card>
             <h3 className="cardTitle">Achievements</h3>
-            <ul className="list">
-              {DATA.achievements.map((a) => (
-                <li key={a}>{a}</li>
-              ))}
-            </ul>
-          </Card>
-
-          <Card>
-            <h3 className="cardTitle">Certifications</h3>
-            <ul className="list">
-              {DATA.certifications.map((c) => (
-                <li key={c}>{c}</li>
-              ))}
-            </ul>
-
-            <div className="divider" />
-
-            <h3 className="cardTitle">Education</h3>
-            <p className="muted">
-              <b>{DATA.education.degree}</b>
-              <br />
-              {DATA.education.college} • {DATA.education.year}
-              <br />
-              GPA: {DATA.education.gpa}
-            </p>
-          </Card>
-        </div>
-      </Section>
-
-      {/* CONTACT */}
-      <Section id="contact" title="Contact" subtitle="Want to collaborate or hire? Let’s connect.">
-        <Card>
-          <div className="contactRow">
-            <div>
-              <p className="muted">Email</p>
-              <p className="bigText">
-                <a href={`mailto:${DATA.email}`}>{DATA.email}</a>
-              </p>
-            </div>
-
-            <div>
-              <p className="muted">Links</p>
-              <div className="contactLinks">
-                <a href={DATA.github} target="_blank" rel="noreferrer">
-                  <Github size={18} /> GitHub
-                </a>
-                <a href={DATA.linkedin} target="_blank" rel="noreferrer">
-                  <Linkedin size={18} /> LinkedIn
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <a className="btn primary" href={`mailto:${DATA.email}`}>
-                <Mail size={18} />
-                Email Me
-              </a>
-            </div>
-          </div>
-        </Card>
-
-        <p className="footer">© {new Date().getFullYear()} {DATA.name} • Built with React</p>
-      </Section>
-    </div>
-  );
-}
+            <ul className="list
