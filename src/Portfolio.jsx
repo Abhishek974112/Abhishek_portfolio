@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-  ArrowRight,
-  Download,
-} from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ArrowRight, Download } from "lucide-react";
 
 const DATA = {
   name: "Abhishek Karyagol",
@@ -70,7 +63,7 @@ const DATA = {
       name: "AI Cricket Player Performance Prediction",
       tag: "ML • Predictive Analytics",
       desc:
-        "Forecasted player outcomes using historical match data. Performed data preprocessing and feature engineering to extract key metrics like runs, strike rate, wickets, and consistency. Trained and evaluated ML models using Python, Pandas, NumPy, and Scikit-learn to support team selection and strategy planning.",
+        "Forecasted player outcomes using historical match data. Performed preprocessing and feature engineering to extract key metrics like runs, strike rate, wickets, and consistency. Trained and evaluated ML models for team selection and strategy planning.",
       tech: ["Pandas", "NumPy", "Scikit-learn"],
       link: null,
     },
@@ -78,7 +71,7 @@ const DATA = {
       name: "AI Internship Guardian",
       tag: "AI Safety • Verification",
       desc:
-        "Developed AI Internship Guardian, a smart platform to detect genuine vs fake internships using AI-driven analysis. Implemented verification checks, risk scoring, and structured insights based on company and offer details. Built using Python with a web-based interface, focusing on secure login, usability, and scalability.",
+        "Smart platform to detect genuine vs fake internships using AI-driven analysis. Implemented verification checks, risk scoring, and structured insights based on company and offer details, focusing on secure login and usability.",
       tech: ["Python", "Risk Scoring", "Web App"],
       link: null,
     },
@@ -87,9 +80,9 @@ const DATA = {
   achievements: [
     "Best Paper award: “Sustainable E-Waste Management in 5G Smart Communities using Blockchain” (National Conference).",
     "College Ambassador for Techfest, IIT Bombay.",
-    "Successfully completed NCC training and awarded the “A” Certificate.",
-    "Volunteered in organizing technical and cultural events at college (coordination + logistics).",
-    "Recognized and advanced to the 4th round of the “Sa Re Ga Ma” music competition.",
+    "Completed NCC training and awarded the “A” Certificate.",
+    "Volunteered in organizing technical and cultural events (coordination + logistics).",
+    "Advanced to 4th round of the “Sa Re Ga Ma” music competition.",
   ],
 
   certifications: [
@@ -169,25 +162,25 @@ export default function Portfolio() {
               I build practical AI/ML projects.
             </h1>
 
-            {/* ✅ PROFILE PHOTO + SMALL INFO (CLEAN, NO DUPLICATION) */}
-            <div style={{ marginTop: 18, display: "flex", alignItems: "center", gap: 14 }}>
+            {/* PROFILE PIC (BIGGER) */}
+            <div style={{ marginTop: 18, display: "flex", alignItems: "center", gap: 16 }}>
               <img
                 src="/profile.jpeg"
                 alt="Abhishek Karyagol"
                 style={{
-                  width: 88,
-                  height: 88,
-                  borderRadius: 18,
+                  width: 170,
+                  height: 170,
+                  borderRadius: 24,
                   objectFit: "cover",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                  boxShadow: "0 18px 45px rgba(0,0,0,0.35)",
+                  border: "2px solid rgba(255,255,255,0.14)",
+                  boxShadow: "0 22px 60px rgba(0,0,0,0.45)",
                 }}
               />
               <div>
-                <p style={{ margin: 0, fontWeight: 700, color: "white" }}>
+                <p style={{ margin: 0, fontWeight: 700, color: "white", fontSize: 18 }}>
                   Open to Internship / Entry-Level AIML Roles
                 </p>
-                <p style={{ margin: "6px 0 0 0", color: "rgba(255,255,255,0.65)" }}>
+                <p style={{ margin: "8px 0 0 0", color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
                   Python • ML • CV • NLP • SQL
                 </p>
               </div>
@@ -354,4 +347,71 @@ export default function Portfolio() {
         <div className="grid2">
           <Card>
             <h3 className="cardTitle">Achievements</h3>
-            <ul className="list
+            <ul className="list">
+              {DATA.achievements.map((a) => (
+                <li key={a}>{a}</li>
+              ))}
+            </ul>
+          </Card>
+
+          <Card>
+            <h3 className="cardTitle">Certifications</h3>
+            <ul className="list">
+              {DATA.certifications.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+
+            <div className="divider" />
+
+            <h3 className="cardTitle">Education</h3>
+            <p className="muted">
+              <b>{DATA.education.degree}</b>
+              <br />
+              {DATA.education.college} • {DATA.education.year}
+              <br />
+              GPA: {DATA.education.gpa}
+            </p>
+          </Card>
+        </div>
+      </Section>
+
+      {/* CONTACT */}
+      <Section id="contact" title="Contact" subtitle="Want to collaborate or hire? Let’s connect.">
+        <Card>
+          <div className="contactRow">
+            <div>
+              <p className="muted">Email</p>
+              <p className="bigText">
+                <a href={`mailto:${DATA.email}`}>{DATA.email}</a>
+              </p>
+            </div>
+
+            <div>
+              <p className="muted">Links</p>
+              <div className="contactLinks">
+                <a href={DATA.github} target="_blank" rel="noreferrer">
+                  <Github size={18} /> GitHub
+                </a>
+                <a href={DATA.linkedin} target="_blank" rel="noreferrer">
+                  <Linkedin size={18} /> LinkedIn
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <a className="btn primary" href={`mailto:${DATA.email}`}>
+                <Mail size={18} />
+                Email Me
+              </a>
+            </div>
+          </div>
+        </Card>
+
+        <p className="footer">
+          © {new Date().getFullYear()} {DATA.name} • Built with React
+        </p>
+      </Section>
+    </div>
+  );
+}

@@ -1,4 +1,4 @@
-import Portfolio from "./Portfolio";
+import Portfolio from "./Portfolio.jsx";
 import "./index.css";
 
 export default function App() {
